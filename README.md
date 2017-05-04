@@ -1,6 +1,6 @@
 # JavaScript-Quizzes-hands-on-
 
-I hope these mini-quizzes are helpful! They are designed for advanced beginners and intermediate JavaScripters . 
+I hope these mini-quizzes are helpful! They are designed for advanced beginners and intermediate JavaScripters. 
 
 Each mini-quiz is six questions: Three are short text answer/fill-in-the-blank/multiple choice. 
 Three are actual coding questions. My suggested answers for the actual coding exercises are one of many solutions, so don't freak out if yours doesn't look like mine! But...If it doesn't compile in your console, you don't pass (i.e. try to redo the question until you get it right).
