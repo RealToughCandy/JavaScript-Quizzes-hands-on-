@@ -1,0 +1,132 @@
+//In this hands-on quiz, I challenged myself to create various scenarios that implement the call(), apply(), and bind() methods.
+//If you found this helpful, please give me a shoutout on social media to spread the word! 
+I'm also on Patreon (even a buck really helps)!
+Twitter: @realToughCandy
+realToughCandy@gmail.com
+(Answers have been left wayyyy down to help your eyes stay out of temptation.) :) 
+-------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
+1. True or false? "this" can point to global object or the object that contains the function
+if the function is a method attached to an object.
+
+
+
+2. call(), apply(), and bind() are:
+  a. Methods
+  b. Functions
+  c. Objects
+  d. Prototypes
+  
+
+
+3.  Define currying in one or two sentences (type below).
+
+
+
+4. Create an example of currying with a bind() method. 
+
+
+
+5. Code an apply() scenario where apply() is used as part of an IIFE (immediately invoked function expression). 
+
+6. Code something that includes a practical implementation of call(). 
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ANSWERS
+--------------------
+
+1. True
+2. a
+3. Currying creates a copy of a function, but with some preset parameters.
+4. Example code that works (tweak as needed): 
+
+function plussed(a,b) {
+  return a + b;
+}
+
+var NonPlussed = plussed.bind(this, 8);
+console.log(NonPlussed(3));
+//Giving bind values sets permanent values of the a/b paramaters when 
+//the copy is made. 
+
+
+
+5. Example code that works (tweak as needed): 
+
+var person = {
+  firstname: 'John',
+  lastname: 'Wickhead',
+  getFullName: function() {
+
+      var fullname = this.firstname + ' ' + this.lastname;
+      return fullname;
+  }
+}
+var logName = function(lang1, lang2) {
+    console.log('Logged: '  + this.getFullName());
+    console.log('Arguments: ' + lang1 +' ' + lang2);
+    console.log('-----------------------');
+}
+var logPersonName=logName.bind(person);
+logPersonName('engleski');
+
+logName.apply(person, ['Mandarin', 'Alienese']);
+
+(function(lang1, lang2) {
+    console.log('Logged: '  + this.getFullName());
+    console.log('Arguments: ' + lang1 +' ' + lang2);
+    console.log('-----------------------');
+
+}).apply(person, ['Pekinese', 'Icelandic']);
+
+
+
+6. Example code that works (tweak as needed): 
+
+var person = {
+  firstname: 'Connie',
+  lastname: 'Bigchung',
+  getFullName: function() {
+
+      var fullname = this.firstname + ' ' + this.lastname;
+      return fullname;
+  }
+}
+var logName = function(lang1, lang2) {
+    console.log('Logged: '  + this.getFullName());
+    console.log('Arguments: ' + lang1 +' ' + lang2);
+    console.log('-----------------------');
+}
+
+logName.call(person, 'Japanese', 'Walrusese');
+
+----------------------------------------------
+CANDY NOTES:
+
+call() lets me determine what the this variable will be, 
+unlike bind(), which creates a copy of the function, call() actually executes
+the function. apply() does the exact same thing with one difference. It wants an array
+of parameters.
+
+NOTICE we are not invoking the function in logName.apply like
+logName().apply becuase the function returns a value. We want
+to use the function as the object, and call a method of that object.
