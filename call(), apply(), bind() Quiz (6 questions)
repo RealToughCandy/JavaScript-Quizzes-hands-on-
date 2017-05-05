@@ -14,7 +14,7 @@ if the function is a method attached to an object.
 
 2. call(), apply(), and bind() are:
   a. Methods
-  b. Functions
+  b. Array variables
   c. Objects
   d. Prototypes
   
@@ -67,7 +67,7 @@ function plussed(a,b) {
 var NonPlussed = plussed.bind(this, 8);
 console.log(NonPlussed(3));
 //Giving bind values sets permanent values of the a/b paramaters when 
-//the copy is made. 
+//the copy is made. So in this example 8 will always be the "a" parameter. 
 
 
 
@@ -130,4 +130,4 @@ of parameters.
 
 NOTICE we are not invoking the function in logName.apply like
 logName().apply becuase the function returns a value. We want
-to use the function as the object, and call a method of that object.
+to use the function as the object, and call a *method* of that object.
